@@ -2,15 +2,11 @@ Cookiecutter Django - Casamento
 ===========================
 
 Cookiecutter Django É um template para criar um site de casamento usando Django
+
 Powered by Cookiecutter_
 Based on Cookiecutter-django_
 
 Por que?
--------
-
-Sometimes all we need is start a fresh and functional project in 2 minutes rather than spend hours setting a complete environment
-
-Features
 ---------
 
 * Melhor organizar as tantas tarefas necessárias para o grande dia
@@ -18,6 +14,17 @@ Features
 * Poder registrar todas as etapas de forma simples e rápida
 * DIY é muito mais legal
 * Não dar 10% dos presentes para operadoras de cartão de crédito
+
+Features
+--------
+
+* Save the date
+* Pagina principal com contagem regressiva
+* Roteiros ;)
+* Fornecedores
+* Paginas de dicas
+* Lista de casamento
+
 
 Requirements
 -----------
@@ -88,6 +95,17 @@ Community
 .. _Issue: https://github.com/huogerac/cookiecutter-django-casamento/issues
 
 
+![Roteiros](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/01-roteiros.jpg)
+
+![Fornecedores](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/02-fornecedores.jpg)
+
+![RSVP](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/03-rsvp-1.png)
+![RSVP - detalhes](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/03-rsvp-2.png)
+
+![Lista de presentes](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/04-Lista.jpg)
+![Lista de presentes - intencão](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/04-Lista-2.png)
+
+
 Not Exactly What You Want?
 ---------------------------
 
@@ -96,6 +114,9 @@ Check the Cookiecutter-django_ repo
 
 Credits
 -------
+Cookiecutter_
+Cookiecutter-django_
+Virtualenv_
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _Cookiecutter-django: https://github.com/pydanny/cookiecutter-django
