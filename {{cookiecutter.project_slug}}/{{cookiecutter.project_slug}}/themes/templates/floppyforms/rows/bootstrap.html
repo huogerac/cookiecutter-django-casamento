@@ -1,3 +1,4 @@
+{% raw %}
 {% load floppyforms %}{% block row %}{% for field in fields %}
 <div class="form-group {% if field.errors %}has-error{% endif %}">
     {% with classes=field.css_classes label=label|default:field.label help_text=help_text|default:field.help_text %}
@@ -15,3 +16,4 @@
     {% endwith %}
 </div><!--- .control-group{% if field.errors %}.error{% endif %} -->
 {% endfor %}{% endblock %}
+{% endraw %}
