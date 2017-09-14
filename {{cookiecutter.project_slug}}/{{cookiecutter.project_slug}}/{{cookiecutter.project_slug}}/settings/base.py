@@ -197,7 +197,7 @@ LOGIN_URL = '/auth/'
 
 # Enquanto nada esta certo ainda, apenas a data, mantenha este como True,
 # senão False para exibir normalmente todas as páginas
-DJ_CASAMENTO_MODO_SAVE_THE_DATE = False
+DJ_CASAMENTO_MODO_SAVE_THE_DATE = True
 
 # Nome dos noivos
 DJ_CASAMENTO_DE_UM_LADO = '{{cookiecutter.casamento_de}}'
