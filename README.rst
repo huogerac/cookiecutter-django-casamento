@@ -14,6 +14,7 @@ Por que?
 * Poder registrar todas as etapas de forma simples e rápida
 * DIY é muito mais legal
 * Não dar 10% dos presentes para operadoras de cartão de crédito
+* Ter o site rodando em 5 minutos
 
 Features
 --------
@@ -24,6 +25,12 @@ Features
 * Fornecedores
 * Paginas de dicas
 * Lista de casamento
+* RSVP simples ;)
+
+Mais informações
+----------------
+* Live demo: http://laneroger.na-inter.net
+* Video bootstrap do site: https://youtu.be/ghIVX6ZOvec
 
 
 Requirements
@@ -66,6 +73,7 @@ Entao execute os comandos::
 
     $ cd mariaejose/
     $ pip install -r requirements/development.pip
+    $ cd mariaejose/
     $ ./manage.py syncdb
     $ ./manage.py migrate --all
     $ ./manage.py runserver
