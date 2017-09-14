@@ -95,15 +95,37 @@ Community
 .. _Issue: https://github.com/huogerac/cookiecutter-django-casamento/issues
 
 
-![Roteiros](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/01-roteiros.jpg)
+.. class:: no-web
 
-![Fornecedores](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/02-fornecedores.jpg)
+    .. image:: https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/01-roteiros.jpg
+        :alt: Roteiros
+        :width: 100%
+        :align: center
 
-![RSVP](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/03-rsvp-1.png)
-![RSVP - detalhes](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/03-rsvp-2.png)
+    .. image:: https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/02-fornecedores.jpg
+        :alt: Fornecedores
+        :width: 100%
+        :align: center
 
-![Lista de presentes](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/04-Lista.jpg)
-![Lista de presentes - intencão](https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/04-Lista-2.png)
+    .. image:: https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/03-rsvp-1.png
+        :alt: RSVP
+        :width: 100%
+        :align: center
+
+    .. image:: https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/03-rsvp-2.png
+        :alt: RSVP
+        :width: 100%
+        :align: center
+
+    .. image:: https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/04-Lista.jpg
+        :alt: Lista de presentes
+        :width: 100%
+        :align: center
+
+    .. image:: https://raw.githubusercontent.com/huogerac/cookiecutter-django-casamento/master/screenshots/04-Lista-2.png
+        :alt: Lista de presentes
+        :width: 100%
+        :align: center
 
 
 Not Exactly What You Want?
