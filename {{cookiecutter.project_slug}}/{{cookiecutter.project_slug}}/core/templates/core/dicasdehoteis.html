@@ -1,0 +1,156 @@
+{% raw %}
+{% extends 'core/base_core.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block content %}
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="section-title">Dicas de Hoteis em SJC</h3>
+          <div class="section-title-border"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Alguns hoteis próximos da <strong><a href="{% url 'core.cerimoniareligiosa' %}">Capela Nossa Sra de Fátima</a></strong></h2>
+
+          <h3>- <a target="_blank" href="http://www.atlanticahotels.com.br/hotel/sao-jose-dos-campos/comfort-sao-jose-dos-campos"> Comfort Hotel</a>
+            <small>
+            (<a target="_blank" href="https://www.google.com.br/maps/dir/Pra%C3%A7a+Ns.+de+F%C3%A1tima,+2+-+Jardim+Nova+America,+SP,+12242-271/Comfort+Hotel+-+Rua+Presidente+Bernardes,+73+-+Jardim+Paulista,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12216-130,+Brazil/@-23.1935495,-45.8987794,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x94cc4a0c0d66f931:0x28240b134d3269db!2m2!1d-45.8986514!2d-23.1931264!1m5!1m1!1s0x94cc4a38c063dd5b:0x1b48d2a6bc84e266!2m2!1d-45.879135!2d-23.189097?hl=pt"><i class="fa fa-map-marker"></i> ver no mapa</a>)
+            </small>
+          </h3>
+          <p>
+            Quarto Duplo/Casal <strong>R$150,15</strong>, Quarto Triplo <strong>R$169</strong>, 
+            (Incluso café da manhã, estacionamento e Internet)<br/>
+            Rua Presidente Bernardes, 73 (3.4km da Capela de carro) <br/>
+            (12) 3947-7666 reservas.cjcp@atlanticahotels.com.br
+          </p>
+          <p>600m da Rodoviária de SJC</p>
+
+          <h3>- <a target="_blank" href="http://smhotel.com.br/news.asp?ID=3"> Hotel San Marco</a>
+            <small>
+            (<a target="_blank" href="https://www.google.com/maps/dir/Pra%C3%A7a+Ns.+de+F%C3%A1tima,+2+-+Jardim+Nova+America,+SP,+12242-271,+Brasil/Av.+Dr.+Ademar+de+Barros,+457+-+Jardim+Sao+Dimas,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12245-010,+Brasil/@-23.1940653,-45.8966234,17z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x94cc4a0c0d66f931:0x28240b134d3269db!2m2!1d-45.8986514!2d-23.1931264!1m5!1m1!1s0x94cc4a6c59191f67:0xa93736363bed8787!2m2!1d-45.8910847!2d-23.1960518?hl=pt-BR"><i class="fa fa-map-marker"></i> ver no mapa</a>)
+            </small>
+          </h3>
+          <p>
+            Quarto Simples <strong>R$117</strong>, Quarto Casal/Duplo <strong>R$143</strong>, 
+            Quarto Triplo <strong>R$185</strong> (Incluso café da manhã, estacionamento e Internet)<br/>
+            Av. Dr. Ademar de Barros, 457 (1km da Capela de carro, 10min caminhando) <br/>
+            (12) 3922-5244 reserva@smhotel.com.br
+          </p>
+
+          <h3>- <a target="_blank" href="http://www.astrohotel.com.br/"> Astro Hotel</a>
+            <small>
+            (<a target="_blank" href="https://www.google.com.br/maps/place/Astro+Hotel/@-23.2025083,-45.9024369,15z/data=!4m12!1m9!2m8!1shotel!3m6!1shotel!2sPar%C3%B3quia+Catedral+S%C3%A3o+Dimas+Igreja+Nossa+Senhora+F%C3%A1tima+-+Pra%C3%A7a+Nossa+Sra.+de+F%C3%A1tima,+2,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12242-271!3s0x94cc4a0c6350b281:0x1c66b19a0af0b0c3!4m2!1d-45.898188!2d-23.193337!3m1!1s0x0000000000000000:0xd556345b1d494c6f?hl=pt"><i class="fa fa-map-marker"></i> ver no mapa</a>)
+            </small>
+          </h3>
+          <p>
+            Quarto Simples <strong>R$126</strong>, Quarto Casal/Duplo <strong>R$153</strong>, 
+            Quarto Triplo <strong>R$180</strong> (Incluso café da manhã, estacionamento e Internet)<br/>
+            Avenida Dr. Nelson D´Ávila, 933 (2km da Capela de carro, 20min caminhando) <br/>
+            (12) 3941-6999 reservas@astrohotel.com.br
+          </p>
+          <h3>- <a target="_blank" href="http://www.monrealehotels.com/hotel-2015/monreale-hotel-sjcampos.html"> Monreale</a> (Antigo 14 Bis Hotel)
+            <small>
+            (<a target="_blank" href="https://www.google.com.br/maps/place/14+Bis+Hotel/@-23.2025083,-45.9024369,15z/data=!4m12!1m9!2m8!1shotel!3m6!1shotel!2sPar%C3%B3quia+Catedral+S%C3%A3o+Dimas+Igreja+Nossa+Senhora+F%C3%A1tima+-+Pra%C3%A7a+Nossa+Sra.+de+F%C3%A1tima,+2,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12242-271!3s0x94cc4a0c6350b281:0x1c66b19a0af0b0c3!4m2!1d-45.898188!2d-23.193337!3m1!1s0x94cc4a6b8b16750d:0x13bbe061877a92de?hl=pt"><i class="fa fa-map-marker"></i> ver no mapa</a>)
+            </small>
+          </h3>
+          <p>
+            Quarto simples <strong>R$160</strong>, duplo ou casal <strong>R$190</strong> (Incluso café da manhã, Estacionamento R$12)<br/>
+            Av. Eng. Francisco José Longo, 511 (1.5km da Capela de carro, 16min caminhando) (12) 2135-0800</p>
+          <p>NOTA: Consultar o site do booking.com onde sempre tem ofertas especiais para este hotel</p>
+
+
+          <h3>- <a target="_blank" href="http://www.polohotel.com.br/"> Polo Hotel</a>
+            <small>
+            (<a target="_blank" href="https://www.google.com.br/maps/place/POLO+HOTEL/@-23.2025083,-45.9024369,15z/data=!4m12!1m9!2m8!1shotel!3m6!1shotel!2sPar%C3%B3quia+Catedral+S%C3%A3o+Dimas+Igreja+Nossa+Senhora+F%C3%A1tima+-+Pra%C3%A7a+Nossa+Sra.+de+F%C3%A1tima,+2,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12242-271!3s0x94cc4a0c6350b281:0x1c66b19a0af0b0c3!4m2!1d-45.898188!2d-23.193337!3m1!1s0x0000000000000000:0x08ad283bb8aafd7c?hl=pt"><i class="fa fa-map-marker"></i> ver no mapa</a>)
+            </small>
+          </h3>
+          <p>
+            Quarto simples <strong>R$129</strong>, duplo ou casal <strong>R$149</strong> (Incluso café da manhã, Estacionamento e Internet)<br/>
+            Rua República de Israel, 60 (2.4km da Capela de carro) (12)3876-5000 - (12)3913-1498 reservas@polohotel.com.br<br/>
+            Próximo ao Shopping Center Vale - Ótimo custo benefício, mesmo não sendo o mais próximo da Capela
+          </p>
+
+          <h3>- <a target="_blank" href="http://www.accorhotels.com/gb/hotel-6035-ibis-sao-jose-dos-campos-colinas/index.shtml"> Ibis</a>
+            <small>
+            (<a target="_blank" href="https://www.google.com.br/maps/search/ibis+hotel/@-23.1931272,-45.8986698,14z/data=!3m1!4b1!4m8!2m7!3m6!1sibis+hotel!2sPra%C3%A7a+Nossa+Sra.+de+F%C3%A1tima,+2+-+Jardim+Nova+America,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12242-271!3s0x94cc4a0c0d66f931:0x28240b134d3269db!4m2!1d-45.8986514!2d-23.1931264?hl=pt"><i class="fa fa-map-marker"></i> ver no mapa</a>)
+            </small>
+          </h3>
+          <p>
+            Quarto simples, duplo ou casal <strong>R$159</strong> (Café da manhã, estacionamento NÃO inclusos)<br/>
+            Av Dr Jorge Zarur, 81 Torre I (4km da Capela de carro) (12)3904-2400 H6035-RE@accor.com.br <br/>
+          </p>
+
+          <h3>- <a target="_blank" href="http://www.farohotel.com.br/sjc-hotel/"> Faro</a>
+            <small>
+            (<a target="_blank" href="https://www.google.com.br/maps/dir/Pra%C3%A7a+Ns.+de+F%C3%A1tima+-+Jardim+Nova+America,+SP/Faro+Hotel+-+R.+S%C3%ADria,+25+-+Jardim+Oswaldo+Cruz,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12216-540/@-23.1985357,-45.9015237,15z/data=!3m1!4b1!4m13!4m12!1m5!1m1!1s0x94cc4a0c6ee6a583:0x5999893ffb6cbeef!2m2!1d-45.898159!2d-23.193695!1m5!1m1!1s0x94cc4a42f3190209:0x91ee04f155df318e!2m2!1d-45.883782!2d-23.199046?hl=pt"><i class="fa fa-map-marker"></i> ver no mapa</a>)
+            </small>
+          </h3>
+          <p>
+            Rua Síria, 25 - Jardim Oswaldo Cruz (3km da Capela de carro)  <br/>
+          </p>
+
+          <h3>- <a target="_blank" href="http://www.accorhotels.com/gb/hotel-5168-mercure-sao-jose-dos-campos-hotel/index.shtml"> Mercure</a>
+            <small>
+            (<a target="_blank" href="https://www.google.com.br/maps/place/Mercure+Sao+Jose+dos+Campos+Hotel/@-23.2025083,-45.9024369,15z/data=!4m12!1m9!2m8!1shotel!3m6!1shotel!2sPar%C3%B3quia+Catedral+S%C3%A3o+Dimas+Igreja+Nossa+Senhora+F%C3%A1tima+-+Pra%C3%A7a+Nossa+Sra.+de+F%C3%A1tima,+2,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12242-271!3s0x94cc4a0c6350b281:0x1c66b19a0af0b0c3!4m2!1d-45.898188!2d-23.193337!3m1!1s0x0000000000000000:0x96bc968352c2c899?hl=pt"><i class="fa fa-map-marker"></i> ver no mapa</a>)
+            </small>
+          </h3>
+          <p>
+            Quarto simples, duplo ou casal <strong>R$228</strong> (Incluso café da manhã, Estacionamento R$12)<br/>
+            Avenida Dr Jorge Zarur - 81 (4km da Capela de carro) (12)3904-2300 h5168-re@accor.com.br <br/>
+            
+          </p>
+
+
+          <h3>
+            Estamos procurando por descontos em Hoteis, por favor, aguarde mais um pouco. Enquanto isto, algumas ofertas podem ser consultadas no 
+            <a target="_blank" href="http://www.booking.com/searchresults.pt-br.html?src=searchresults&city=-671408&ssne=S%C3%A3o+Jos%C3%A9+dos+Campos&ssne_untouched=S%C3%A3o+Jos%C3%A9+dos+Campos&error_url=http%3A%2F%2Fwww.booking.com%2Fsearchresults.pt-br.html%3Faid%3D332539%3Blabel%3Dmetagha-hotel-11824_site-mapresults_ucc-BR_dev-desktop_los-1_room-0_lang-pt_curr-BRL%3Bsid%3D7c4fbe5461f6e1a480dcd4c514e20cf4%3Bdcid%3D4%3Bcheckin%3D2015-06-14%3Bcheckout%3D2015-06-15%3Bclass_interval%3D1%3Bcsflt%3D%257B%257D%3Bdest_id%3D-671408%3Bdest_type%3Dcity%3Bdtdisc%3D0%3Bhighlighted_hotels%3D11824%3Bhlrd%3D1%3Bhyb_red%3D0%3Binac%3D0%3Bnha_red%3D0%3Bno_rooms%3D1%3Boffset%3D0%3Bredirected_from_city%3D0%3Bredirected_from_landmark%3D0%3Bredirected_from_region%3D0%3Breview_score_group%3Dempty%3Bscore_min%3D0%3Bss_all%3D0%3Bssb%3Dempty%3Bsshis%3D0%26%3B&aid=332539&dcid=4&label=metagha-hotel-11824_site-mapresults_ucc-BR_dev-desktop_los-1_room-0_lang-pt_curr-BRL&lang=pt-br&sid=7c4fbe5461f6e1a480dcd4c514e20cf4&si=ai%2Cco%2Cci%2Cre%2Cdi&ss=S%C3%A3o+Jos%C3%A9+dos+Campos&checkin_monthday=4&checkin_year_month=2015-7&checkout_monthday=5&checkout_year_month=2015-7&no_rooms=1&group_adults=2&group_children=0&highlighted_hotels=11824&highlighted_hotels=&dest_type=city&dest_id=-671408"> Booking.com</a> ou no
+            <a target="_blank" href="https://www.google.com.br/maps/search/hotel/@-23.1983666,-45.8974587,16z/data=!4m8!2m7!3m6!1shotel!2sPar%C3%B3quia+Catedral+S%C3%A3o+Dimas+Igreja+Nossa+Senhora+F%C3%A1tima+-+Pra%C3%A7a+Nossa+Sra.+de+F%C3%A1tima,+2,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12242-271!3s0x94cc4a0c6350b281:0x1c66b19a0af0b0c3!4m2!1d-45.898188!2d-23.193337?hl=pt"> Google Maps</a>
+          </h3>
+          <p><br/></p>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="col-xs-12">
+            <p>
+              <img width="100%" src="{% static 'themes/default/img/imagem-dicas-hoteis.jpg' %}">
+            </p>
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <center>
+            <p><br/></p>
+            <p>
+              <a class="btn btn-default btn-lg" href="{% url 'core.showhome' %}">Ir para página principal</a>
+
+              <a class="btn btn-warning btn-lg" href="{% url 'core.salaodebeleza' %}">Dicas de Salão de beleza</a>
+            </p>
+          </center>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

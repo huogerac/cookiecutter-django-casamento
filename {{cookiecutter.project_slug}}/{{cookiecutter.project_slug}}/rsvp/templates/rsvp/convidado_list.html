@@ -1,0 +1,246 @@
+{% raw %}
+{% extends 'rsvp/base_rsvp.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <!-- Main -->
+  <section class="main text-center" id="home" style="height: 26px;">
+    <div class="page">
+      <div class="wrapper">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-4">
+          <span id="show-novos-rsvp" class="btn btn-default btn-lg">Entradas de RSVP</span>
+          {% if novos %}
+          <span class="badge">{{ novos|length }}</span>
+          {% endif %}
+
+          <div id="novos-rsvp">
+            <center>
+              <p><small>Todo mundo que confirma através do site gera um item aqui neste lado</small></p>
+              <i class="fa fa-arrow-down"></i>
+            </center>
+            <h2>Entradas de RSVP <small>(via site/fone)</small></h2>
+            <hr class="small">
+
+            <table class="table table-condensed table-hover">
+              <tbody>
+              {% for convidado in rsvp_convidado %}
+                <tr {% if not convidado.contabilizado %}class="danger"{% endif %}>
+                  <td>
+                    {% if not convidado.contabilizado %}
+                     <strong><i class="fa fa-arrow-circle-right"></i></strong>
+                    {% endif %}
+                  </td>
+                  <td>{{ convidado.rsvp }}</td>
+                  <td>
+                    <a href="{% url 'rsvp.convidadorsvp.update' convidado.id %}">{{ convidado.nome_completo }} <i class="fa fa-pencil"></i></a>
+                    <br/>
+                    {% for acompanhante in convidado.acompanhate_list %}
+                      &nbsp&nbsp&nbsp <small>{{ acompanhante.nome }} ({{ acompanhante.tipo }})</small><br/>
+                    {% endfor %}
+                  </td>
+                  <td><small>{{ convidado.data|timesince }}</small></td>
+                </tr>
+              {% endfor %}
+              </tbody>
+            </table>
+          </div>
+
+          <h1>Resumo</h1>
+
+          <h2>RSVP</h2>
+          
+          <table class="table table-condensed">
+            <tbody>
+              <tr>
+                <td></td>
+                <td><br/>convidados</td>
+                <td>sem<br/>RSVP</td>
+                <td class="success"><br/>SIM</td>
+                <td class="danger"><br/>NÃO</td>
+              </tr>
+              <tr>
+                <td>Adultos</td>
+                <td>{{ total_convidados }}</td>
+                <td>{{ sem_rsvp }}</td>
+                <td class="success"><strong>{{ rsvp_sim }}</strong></td>
+                <td class="danger">{{ rsvp_nao }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <br/>
+          <h2>Sem RSVP <small>(aguardando resposta)</small> </h2>
+          <table class="table table-condensed">
+            <tbody>
+              <tr>
+                <td class="col-xs-3">Noivo Parte da Mãe</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ semrsvp_noivopartedamae }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ semrsvp_noivopartedamae }}%">
+                    </div>
+                  </div>
+                </td>
+                <td class="col-xs-1">{{ semrsvp_noivopartedamae }}%</td>
+              </tr>
+              <tr>
+                <td class="col-xs-3">Noivo Parte de Pai</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ semrsvp_noivopartedopai }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ semrsvp_noivopartedopai }}%">
+                    </div>
+                  </div>
+                </td>
+                <td class="col-xs-1">{{ semrsvp_noivopartedopai }}%</td>
+              </tr>
+              <tr>
+                <td class="col-xs-3">Noivo Amigos</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ semrsvp_noivoamigos }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ semrsvp_noivoamigos }}%">
+                    </div>
+                  </div>
+                </td>
+                <td class="col-xs-1">{{ semrsvp_noivoamigos }}%</td>
+              </tr>
+
+
+              <tr>
+                <td class="col-xs-3">Noiva Parte da Mãe</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ semrsvp_noivapartedamae }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ semrsvp_noivapartedamae }}%">
+                    </div>
+                  </div>
+                </td>
+                <td class="col-xs-1">{{ semrsvp_noivapartedamae }}%</td>
+              </tr>
+              <tr>
+                <td class="col-xs-3">Noiva Parte de Pai</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ semrsvp_noivapartedopai }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ semrsvp_noivapartedopai }}%">
+                    </div>
+                  </div>
+                </td>
+                <td class="col-xs-1">{{ semrsvp_noivapartedopai }}%</td>
+              </tr>
+              <tr>
+                <td class="col-xs-3">Noiva Amigos</td>
+                <td>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="{{ semrsvp_noivaamigos }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ semrsvp_noivaamigos }}%">
+                    </div>
+                  </div>
+                </td>
+                <td class="col-xs-1">{{ semrsvp_noivaamigos }}%</td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+        </div>
+        <div class="col-sm-1"></div>
+
+        <div class="col-sm-7">
+          <center>
+            <p><small>Aqui é a lista final atualizada manualmente conforme os convidados ligam ou entram na coluna a esquerda</small></p>
+            <i class="fa fa-arrow-down"></i>
+          </center>
+          <h2>RSVP Final</h2>
+
+          {% regroup object_list by grupo as grupos %}
+          
+          {% for grupo in grupos %}
+
+            <h3>{{ grupo.grouper }}</h3>
+            <hr class="small">
+
+            <table class="table table-condensed table-hover">
+              <tbody>
+              {% for convidado in grupo.list %}
+                <tr {% if convidado.confirmado %}
+                      class="success"
+                    {% elif convidado.nao_confirmado %}
+                      class="danger"
+                    {% endif %}>
+                  <td>
+                    {% if convidado.confirmado %}
+                      <i class="fa fa-check-circle"></i>
+                    {% elif convidado.nao_confirmado %}
+                      <i class="fa fa-times"></i>
+                    {% endif %}
+                  </td>
+                  <td>
+                    <a href="{% url 'rsvp.convidado.update' convidado.id %}">{{ convidado.nome_completo }} <i class="fa fa-pencil"></i></a>
+                  </td>
+                  <td>{% if convidado.confirmado %}1{% endif %}</td>
+                </tr>
+
+                    {% for acompanhante in convidado.acompanhate_list %}
+                    <tr{% if acompanhante.confirmado %}
+                         class="success"
+                       {% elif acompanhante.nao_confirmado %}
+                         class="danger"
+                       {% endif %}>
+                      <td>
+                        {% if acompanhante.confirmado %}
+                          <i class="fa fa-check-circle"></i>
+                        {% elif acompanhante.nao_confirmado %}
+                          <i class="fa fa-times"></i>
+                        {% endif %}
+                      </td>
+                      <td>&nbsp&nbsp&nbsp <small>
+                      <a href="{% url 'rsvp.acompanhante.update' acompanhante.id %}">{{ acompanhante.nome }} <i class="fa fa-pencil"></i> </a>
+                      ({{ acompanhante.tipo_verbose }})</small>
+                      </td>
+                      <td>
+                        {% if acompanhante.confirmado and acompanhante.adulto %}1{% endif %}
+                      </td>
+                    </tr>
+                    {% endfor %}
+
+              {% endfor %}
+              </tbody>
+            </table>
+
+          {% endfor %}
+
+
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+      });
+
+      $( "#novos-rsvp" ).hide();
+
+      $( "#show-novos-rsvp" ).click(function () {
+        $( "#novos-rsvp" ).toggle();
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

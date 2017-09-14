@@ -1,0 +1,28 @@
+{% raw %}
+{% extends 'core/base_core.html' %}
+
+
+{% block content %}
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container" style="min-height: 380px; padding-top: 120px;">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="section-title">Em breve mais informações</h3>
+            <div class="section-title-border"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+              <p style="text-align: center;">
+                <a href="{% url 'core.savethedate' %}">SAVE THE DATE</a>
+              </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+{% endblock %}
+{% endraw %}

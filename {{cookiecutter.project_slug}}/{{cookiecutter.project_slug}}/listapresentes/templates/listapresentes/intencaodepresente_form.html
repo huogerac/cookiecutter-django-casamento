@@ -1,0 +1,74 @@
+{% raw %}
+{% extends 'listapresentes/base_listapresentes.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+  <!-- Main -->
+  <section class="main text-center" id="home" style="height: 26px;">
+    <div class="page">
+      <div class="wrapper">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-xs-5">
+          <h1>Comprar presente para Elaine & Roger</h1>
+          <p>Assim que você confirmar suas informações, iremos te informar nossa conta bancária para transferência.
+          </p>
+          <p>Assim iremos utilizar esse valor para comprar o presente!</p>
+          <p>Obrigado.</p>
+
+        </div>
+        <div class="col-xs-7">
+
+          <form method='post' enctype="multipart/form-data">{% csrf_token %}
+
+            {{ form }}
+
+            <button type="submit" class="btn btn-warning btn-lg">
+              <i class="fa fa-thumbs-o-up"></i> CONFIRMAR
+            </button>
+
+          </form>
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <center>
+            <p><br/></p>
+            <p>
+              <a class="btn btn-default btn-lg" href="{% url 'listapresentes.home' %}">Voltar para lista</a>
+              <a class="btn btn-default btn-lg" href="{% url 'core.showhome' %}">Ir para página principal</a>
+            </p>
+          </center>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $( "#id_nome" ).focus();
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

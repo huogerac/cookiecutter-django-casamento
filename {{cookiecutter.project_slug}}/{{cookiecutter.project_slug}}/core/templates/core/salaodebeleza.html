@@ -1,0 +1,99 @@
+{% raw %}
+{% extends 'core/base_core.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block content %}
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="section-title">Salão de Beleza em SJC</h3>
+          <div class="section-title-border"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Salões próximos da Capela/dos hoteis</h2>
+          <h3>- <a target="_blank" href="http://www.divinostudiocabeleireiros.com.br"> Divino Studio Cabelereiros</a>
+          </h3>
+          <p>R. Fernão Dias, 136 - Jardim Esplanada - <strong>(12) 3913-4354</strong><br/>
+          Escova: R$60, Penteado: R$100, Penteado e Maquiagem: R$200, Pé e mão: R$36
+          </p>
+
+
+          <h3>- <a target="_blank" href="http://www.noemiastudiodebeleza.com.br"> Noemia Studio de Beleza</a>
+          </h3>
+          <p>Rua Maestro Egidio Pinto, 60 - Jd. Sao Dimas - <strong>12 3921-2297/ 12 3941-2966</strong><br/>
+          Escova: a partir de R$35, Penteado: R$70, Maquiagem: R$90, Pé e mão: R$38 (R$28 seg. e ter.)</p>
+
+          <h3>- <a target="_blank" href="http://www.mwstyllus.com.br">MW Styllus</a>
+          </h3>
+          <p>Av. 9 de Julho, 395 - Vila Adyana - <strong>12 3911-4586/ 12 3921-2223</strong><br/>
+          Escova: R$50, Penteado: R$100, Maquiagem: R$100, Pé e mão: R$38</p>
+        </div>
+
+        <div class="col-xs-12">
+          <h2>Salões próximos da nossa casa (Res. Aquarius)</h2>
+          <h3>- <a target="_blank" href="http://www.salaodebelezarequinte.com.br"> Requinte Hair Esthetic Center</a>
+          </h3>
+          <p>Av. Alfredo Ignácio Nogueira Penido, 255 - Loja 14 - Res. Aquarius - <strong>(12) 3945-0036</strong></p>
+
+          <h3>- <a target="_blank" href="https://www.facebook.com/victorine.beaute"> Victorine Beaute Salon</a>
+          </h3>
+          <p>Av. Comendador Vicente de Paulo Penido, 640 - Jd. Res. Aquarius -<strong>(12) 3029-5080 / 3207-7955</strong><br/>
+          Escova: a partir de R$45, Penteado: R$115, Maquiagem: R$135, Pé e mão: R$45</p>
+
+          <h3>- Depilvale (dentro do Carrefour)</h3>
+          <p>Av. Deputado Benedito Matarazzo, 5701 - Jd. Res. Aquarius -<strong>(12) 3913-6821</strong><br/>
+          Escova: a partir de R$36, Penteado: R$80, Maquiagem: R$80</p>
+
+          <h3>- <a target="_blank" href="https://www.cortestilo.com.br"> Corte & Stilo (dentro do Carrefour)</a>
+          </h3>
+          <p>Av. Comendador Vicente de Paulo Penido, 640 - Jd. Res. Aquarius -<strong>(12) 3923-8797 / 9 8706-7271</strong><br/>
+          Escova: a partir de R$38, Penteado: R$80, Maquiagem: R$60, Pé e mão: R$40</p>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs-12">
+          <h2>Quem quiser pode consultar o mapa abaixo e ver uma lista de outros salões próximo a Capela.</h2>
+          <h4><strong><a target="_blank" href="https://www.google.com.br/maps/search/salao+de+beleza/@-23.1931272,-45.8986698,17z/data=!3m1!4b1!4m8!2m7!3m6!1ssalao+de+beleza!2sPra%C3%A7a+Nossa+Sra.+de+F%C3%A1tima,+2+-+Jardim+Nova+America,+S%C3%A3o+Jos%C3%A9+dos+Campos+-+SP,+12242-271!3s0x94cc4a0c0d66f931:0x28240b134d3269db!4m2!1d-45.8986514!2d-23.1931264?hl=en"><i class="fa fa-map-marker"></i> Ver mapa com salões de beleza</a></strong>
+          </h4>
+          <h3><small>Nota: Pesquisando você poderá encontrar opções melhores do que as apresentadas aqui...</small></h3>
+          <p><br/></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <center>
+            <p><br/></p>
+            <p>
+              <a class="btn btn-default btn-lg" href="{% url 'core.showhome' %}">Ir para página principal</a>  
+              <a class="btn btn-warning btn-lg" href="{% url 'core.dicasdehoteis' %}">Dicas de hoteis</a>
+            </p>
+          </center>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

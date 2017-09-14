@@ -1,0 +1,73 @@
+{% raw %}
+{% extends 'listapresentes/base_listapresentes.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+  <!-- Main -->
+  <section class="main text-center" id="home" style="height: 26px;">
+    <div class="page">
+      <div class="wrapper">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-xs-4">
+          <h1>Comprar presente para Elaine & Roger</h1>
+        </div>
+        <div class="col-xs-8">
+
+          <h3><strong>{{ object.nome }}</strong>,</h3>
+          <h3>
+          Por favor, transferir o valor de <small>R$</small><strong>{{ object.valor }}</strong> para uma das nossas contas bancárias listada abaixo:
+          </h3>
+          
+          <h2><i class="fa fa-angle-right"></i> Banco Itaú</h2>
+          <h4><small>Favorecido:</small> Roger de Almeida Camargo - <small>CPF:</small> 302.104.228-74</h4>
+          <h4><small>ag:</small> 2954 <small>cc:</small> 60237-7 </h4>
+
+          <center><p>OU</p></center>
+          <h2><i class="fa fa-angle-right"></i> Banco Bradesco</h2>
+          <h4><small>Favorecido:</small> Roger de Almeida Camargo - <small>CPF:</small> 302.104.228-74</h4>
+          <h4><small>ag:</small> 1382 <small>cc:</small> 0127308-6 </h4>
+
+          <center><p>OU</p></center>
+          <h2><i class="fa fa-angle-right"></i> Banco Santander</h2>
+          <h4><small>Favorecido:</small> Elaine Santos Galvão - <small>CPF:</small>318.385.498-89</h4>
+          <h4><small>ag:</small> 4334 <small>cc:</small> 01059120-6 </h4>
+          <br/>
+          <h3>Muito obrigado.</h3>
+          <br/>
+          <p>Observações:</p>
+          <p>- Os <strong>{{ object.centavos }}</strong> centavos do valor transferido é como iremos identificar a sua transferência.</p>
+
+        </div>
+        <div class="col-xs-12">
+          <center>
+            <p>
+              <a class="btn btn-default btn-lg" href="{% url 'core.showhome' %}">Ir para página principal</a>
+            </p>            
+          </center>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block extrajs_bottom %}
+
+{% endblock extrajs_bottom %}
+{% endraw %}

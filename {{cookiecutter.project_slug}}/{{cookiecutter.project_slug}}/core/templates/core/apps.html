@@ -1,0 +1,82 @@
+{% raw %}
+{% extends 'core/base_core.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block content %}
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="section-title">Apps para uso do nosso dia</h3>
+          <div class="section-title-border"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-2">
+          <img width="100%" src="https://lh4.ggpht.com/Yk2PeUGyVCKN2pT2I3XMsND2eLQtM8hvAAIlKJWOJjzrFCAaatIfmczr1exAtgF-gw=w300">
+        </div>
+        <div class="col-sm-10">
+          <h1>Photago <small>Acesse/compartilhe as fotos do nosso casamento</small></h1>
+          <h3>Nos ajude a registrar todos os momentos deste dia muito especial para nós.</h3>
+          <p>
+            <a class="btn btn-success" href="https://play.google.com/store/apps/details?id=com.photago.android">App para Android</a>
+            <a class="btn btn-success" href="https://itunes.apple.com/gb/app/photago/id517254628">App para iPhone</a>
+          </p>
+        </div>
+
+        <div class="col-sm-2">
+          <img width="100%" src="https://lh6.ggpht.com/w0koBfhQ_A3EJ4Y_YXKJoPjZhYnTsq8U02X4urrI4E9UsOaIg7-JHdH9_uZyXL32R4Zr=w300"/>
+        </div>
+        <div class="col-sm-10">
+          <h1>Wedding Hairstyles <small>Veja tipos de penteados para casamento</small></h1>
+          <p>
+            <a class="btn btn-success" href="https://play.google.com/store/apps/details?id=com.weddinghairstyles.devkeligia.app">App para Android</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <img width="100%" src="https://lh4.ggpht.com/isQrwwxINaQFu1rpT7pdTcBNwmFWLoTGrsKpyYKyYGBcXwiaMiiZX5KKBjV3bYOE5e8=w300">
+        </div>
+        <div class="col-sm-10">
+          <h1>2014 Wedding Hairstyles <small>Veja tipos de penteados para casamento</small></h1>
+          <p>
+            <a class="btn btn-success" href="https://play.google.com/store/apps/details?id=com.love.weddinghairstyles2014">App para Android</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <center>
+            <p><br/></p>
+            <p>
+              <a class="btn btn-default btn-lg" href="{% url 'core.showhome' %}">Ir para página principal</a>
+
+              <a class="btn btn-warning btn-lg" href="{% url 'core.salaodebeleza' %}">Dicas de Salão de beleza</a>
+            </p>
+          </center>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

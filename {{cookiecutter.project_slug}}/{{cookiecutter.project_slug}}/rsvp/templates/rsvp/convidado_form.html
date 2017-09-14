@@ -1,0 +1,66 @@
+{% raw %}
+{% extends 'rsvp/base_rsvp.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+  <!-- Main -->
+  <section class="main text-center" id="home" style="height: 26px;">
+    <div class="page">
+      <div class="wrapper">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-12">
+
+          <form method='post' enctype="multipart/form-data">{% csrf_token %}
+
+            {{ form}}
+
+            <div class="row">
+
+              <div class="col-xs-4">
+                <div class="pull-right">
+                  <button type="submit" class="btn btn-warning btn-lg">
+                    <i class="fa fa-thumbs-o-up"></i> Salvar
+                  </button>
+                </div>
+              </div>
+            </div>
+
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

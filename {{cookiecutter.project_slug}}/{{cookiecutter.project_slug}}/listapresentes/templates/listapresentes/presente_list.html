@@ -1,0 +1,81 @@
+{% raw %}
+{% extends 'listapresentes/base_listapresentes.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block content %}
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="section-title">Lista de presentes</h3>
+          <div class="section-title-border"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+            <center>
+              <p class="lead">
+                <strong>pre.sen.te</strong>
+                <small>1</small> Que existe ou sucede no momento de que se fala; atual. 
+                <small>2</small> Diz-se da pessoa ou coisa que momento diante dos olhos
+                <small>3</small> Que assiste em pessoa: Presente ao ato. 
+                <small>4</small> Que está a ponto de se realizar; iminente. 
+                <small>5</small> Diz-se do tempo que exprime ação que está sendo feita;
+                <small>6</small> O tempo presente; o tempo atual.
+                <small>7</small> Tempo que nos modos verbais exprime a ideia do momento em que se fala. 
+                <small>8</small> Brinde, dádiva, mimo, oferenda, oferta.              
+              </p>
+            </center>
+          <p class="lead">
+          E apenas pela definição da palavra, sua presença e o seu tempo dedicados em celebrar conosco a nossa felicidade, ja seriam mais do que os nossos melhores presentes.
+          </p>
+          <h1><strong>Cotas para a lua de mel</strong></h1>
+          <p>
+            Nos iremos ficar de pernas pro ar alguns dias em Paraty-RJ, cidade histórica, cheia de vida e poesia, que de tão perto da gente ainda não conhecemos. Para aqueles que querem contribuir com nossa lua-de-mel, seguem algumas sugestões de passeios que queremos fazer por lá:
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        {% for presente in presente_list %}
+          <div class="col-sm-4">
+            <p>
+              <img width="100%" src="{{ presente.imagem.url }}">
+            </p>
+            <h2><strong>{{ presente.titulo }}</strong></h2>
+            <h3>
+              <span style="font-size: 20px;">R$</span><strong>{{ presente.valor }}</strong>
+              <a href="{% url 'listapresentes.intencao.create' presente.id %}" class="btn btn-success"><i class="fa fa-gift"></i> Comprar presente</a>
+            </h3>
+            <p><small>{{ presente.descricao }}</small></p>
+          </div>
+
+          {% if forloop.counter|divisibleby:3 %}
+            <div class="clearfix visible-lg-block"></div>
+          {% endif %}
+
+        {% endfor %}
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <center>
+            <p><br/></p>
+            <p>
+              <a class="btn btn-default btn-lg" href="{% url 'core.showhome' %}">Ir para página principal</a>
+            </p>
+          </center>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+
+{% endblock extrajs_bottom %}
+{% endraw %}

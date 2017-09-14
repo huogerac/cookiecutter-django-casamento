@@ -1,0 +1,7 @@
+-r base.pip
+
+django-debug-toolbar==1.2.1
+ipython==2.2.0
+ipdb==0.8
+Werkzeug==0.9.6
+Fabric==1.9.1

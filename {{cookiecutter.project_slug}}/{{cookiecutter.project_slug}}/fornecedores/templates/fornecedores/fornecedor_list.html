@@ -1,0 +1,72 @@
+{% raw %}
+{% extends 'themes/default/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="section-title">Lista de fornecedores</h3>
+          <div class="section-title-border"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+          <table class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th>Fornecedor</th>
+                <th></th>
+                <th>Contato</th>
+                <th>Endereço</th>
+                <th>Notas</th>
+              </tr>
+            </thead>
+            <tbody>
+            {% for fornecedor in object_list %}
+              <tr>
+                <td>{{ fornecedor.nome }}<br/>
+                    <small><a href="{{ fornecedor.site }}">{{ fornecedor.site }}</a></small>
+                </td>
+                <td>{{ fornecedor.categoria }}</td>
+                <td>{{ fornecedor.contato }}<br/>
+                    {{ fornecedor.email }}<br/>
+                    {{ fornecedor.fone }} {{ fornecedor.fone2 }}
+                    <br/>
+                </td>
+                <td><small>{{ fornecedor.endereco }}</small></td>
+                <td>
+                  <small>{{ fornecedor.notas }}</small>
+                </td>
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <center>
+            <p><br/></p>
+            <p>
+              <a class="btn btn-default btn-lg" href="{% url 'core.showhome' %}">Ir para página principal</a>
+              <a class="btn btn-warning btn-lg" href="{% url 'roteiros.lista' %}">Roteiros</a>
+            </p>
+          </center>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+
+{% endblock extrajs_bottom %}
+{% endraw %}

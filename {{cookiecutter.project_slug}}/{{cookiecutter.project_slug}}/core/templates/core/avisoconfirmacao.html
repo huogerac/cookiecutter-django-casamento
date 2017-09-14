@@ -1,0 +1,77 @@
+{% raw %}
+{% extends 'core/base_core.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block content %}
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="section-title">AVISO IMPORTANTE</h3>
+          <div class="section-title-border"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <center>
+            <h2>É muito importante que os convidados <strong>confirmem</strong> a presença (SIM ou NÃO) para o coquetel após a cerimônia religiosa.</h2>
+
+            <h2>O endereço/telefone para confirmação estão juntos com o convite.</h2>
+            <h2><small>O restaurante tem espaço limitado e requer lista de entrada com nome completo</small></h2>
+            <br/>
+            <h2><strong>Dúvidas e/ou Problemas? </strong></h2>
+            <h2>Favor utilizar umas das opções abaixo:</h2>
+
+          </center>
+
+
+        </div>
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+          <center>
+            <table class="table table-condensed table-hover">
+              <tbody>
+                <tr>
+                  <td>Email</td>
+                  <td><strong>{{ DJ_CASAMENTO_EMAIL_CONTATO }}</strong></td>
+                </tr>
+                <tr>
+                  <td>Fone</td>
+                  <td><strong>{{ DJ_CASAMENTO_FONE_CONTATO }}</strong></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <br/>
+            <h3>Agradecemos a colaboração</h3>
+            <br/><br/>
+            
+            <a class="btn btn-default btn-lg" href="{% url 'core.showhome' %}">Ir para página principal</a>
+            
+          </center>
+        </div>
+
+      </div>
+
+
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

@@ -1,0 +1,77 @@
+{% raw %}
+{% extends 'rsvp/base_rsvp.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+  {{ block.super }}
+  {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+  <!-- Main -->
+  <section class="main text-center" id="home" style="height: 26px;">
+    <div class="page">
+      <div class="wrapper">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="section-title">Confirmação de presença</h3>
+          <div class="section-title-border"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <p class="lead">
+          Após nossa cerimônia <abbr title="4 Julho 2015 às 16:45 em São José dos Campos">religiosa</abbr>, ficaremos muito felizes  com sua presença em nossa singela recepção.
+          </p>
+          <p class="lead">
+          Iremos recebê-los no restaurante Azenda com um coquetel para os familiares mais próximos. Como o restaurante conta com um espaço limitado de pessoas, contamos com a sua colaboração confirmando ou não a presença.
+          </p>
+          <p>
+            Por favor, entre com um <strong>TELEFONE</strong> e/ou <strong>EMAIL</strong> válido para que possamos entrar em contato caso necessário.
+          </p>
+        </div>
+
+        <div class="col-sm-12">
+
+          <form method='post' >{% csrf_token %}
+            
+            {{ form }}
+
+            <p>
+              <br/>
+              <button type="submit" class="btn btn-warning btn-lg">
+                <i class="fa fa-arrow-right"></i> Continuar
+              </button>
+            </p>
+          </form>
+
+        </div>
+        
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

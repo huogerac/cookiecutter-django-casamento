@@ -1,0 +1,73 @@
+{% raw %}
+{% load static %}
+
+<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody>
+    <tr>
+      <td>
+        <center>
+          <img alt="Elaine & Roger" src="{% static 'themes/default/img/background_home_3240x1900_default.jpg' %}" style="display:block" width="280" tabindex="0">
+        </center>
+      </td>
+    </tr>
+    <tr>
+      <td style="padding:0 35px 30px 35px;">
+        <h1 style="font-size:26px;font-weight:normal;color:#4d4d4d">
+          <span style="color:#4d4d4d">Oi amigo,<br/>
+          Muito obrigada pelo seu presente! <br/>
+          Depois enviaremos uma foto do lugar que você nos ajudou a visitar em nossa lua de mel! <br/>
+
+
+          </span>
+        </h1>
+
+        <h2 style="font-size:20px; font-weight:normal;">
+          <span style="color:#5C5555">
+          Pedimos que confirme sua presença o quanto antes.<br/>
+          Nossa recepção será um coquetel no restaurante Azenda o qual conta com um espaço limitado. Contamos com sua colaboração. <br/>
+          </span>
+        </h2>
+
+        <center>
+          <p style="padding: 0 0px 20px 0px;">
+            <a href="http://{{ DJ_CASAMENTO_SERVER }}/confirmacao/" style="color: #fff; background: #E0390D; margin: 0;padding: 10px 15px;border-bottom: 3px solid #711A13;border-radius: 4px;text-decoration: none;font-size: 18px;">Confirmar Presença</a>
+          </p>
+        </center>
+
+        <h2 style="font-size:20px; font-weight:normal;">
+          <span style="color:#5C5555">Acesse o nosso site para mais informações</span>
+        </h2>
+        <center>
+          <p style="padding: 0 0px 20px 0px;">
+            <a href="http://{{ DJ_CASAMENTO_SERVER }}/dicasdehoteis/" style="color: #725856; background: #E1BCB3; margin: 0;padding: 10px 15px;border-bottom: 3px solid #725856;border-radius: 4px;text-decoration: none;font-size: 13px;">Dicas de hoteis</a>
+            <a href="http://{{ DJ_CASAMENTO_SERVER }}/salaodebeleza/" style="color: #725856; background: #E1BCB3; margin: 0;padding: 10px 15px;border-bottom: 3px solid #725856;border-radius: 4px;text-decoration: none;font-size: 13px;">Dicas de Salão</a>
+            <a href="http://{{ DJ_CASAMENTO_SERVER }}/cerimoniareligiosa/" style="color: #725856; background: #E1BCB3; margin: 0;padding: 10px 15px;border-bottom: 3px solid #725856;border-radius: 4px;text-decoration: none;font-size: 13px;">Endereço da Capela & Restaurante</a>
+          </p>
+        </center>
+
+      </td>
+    </tr>
+    </tbody>
+</table>
+<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody style="font-size:16px;font-weight:normal;">
+    <tr>
+      <td>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #EDEAEA; font-family:helvetica,arial;padding: 20px 0 20px 0;">
+          <tbody align="center" style="font-size:14px;font-weight:normal;line-height: 18px;color:#272525;">
+            <tr>
+              <td><strong>{{ DJ_CASAMENTO_DE_UM_LADO }} & {{ DJ_CASAMENTO_DO_OUTRO }}</strong></td>
+            </tr>
+            <tr>
+              <td>{{ DJ_CASAMENTO_DATE|date:"D d M Y" }}</td>
+            </tr>
+            <tr>
+              <td><a href="http://{{ DJ_CASAMENTO_SERVER }}/">http://{{ DJ_CASAMENTO_SERVER }}/</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </td>
+    </tr>
+  </tbody>
+</table>
+{% endraw %}

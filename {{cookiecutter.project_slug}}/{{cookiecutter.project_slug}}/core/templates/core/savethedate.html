@@ -1,0 +1,32 @@
+{% raw %}
+{% extends 'core/base_core.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<section style="background-color: #FFF; overflow-y: scroll; height: 100%;">
+
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-12" style="text-align: center;">
+        {% if to %}
+      	<h1 style="font-size: 4.6em; color: #505050;"> {{ to }},</h1>
+        {% endif %}
+      	<figure style="padding-top: 20px; padding-bottom: 80px;">
+          <img src="{% static 'themes/default/img/save-the-date.png' %}" style="width: 84%!important;height: auto!important;">
+        </figure>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+{% endblock content %}
+
+{% block footer_bottom %}
+{% endblock footer_bottom %}
+{% endraw %}

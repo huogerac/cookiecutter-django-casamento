@@ -1,0 +1,248 @@
+{% raw %}
+{% extends 'core/base_core.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status" class="text-center">
+        <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main -->
+    <section class="main text-center" id="home">
+      <div class="page">
+        <div class="wrapper">
+          <div class="container">
+
+            <i class="fa fa-heart" style="font-size: 56px" ></i>
+            <h1 class="heading">{{ DJ_CASAMENTO_DE_UM_LADO }} <span style="color: yellow;">&</span> {{ DJ_CASAMENTO_DO_OUTRO }}</h1>
+            <input type="hidden" id="id_data_casamento" value="{{ DJ_CASAMENTO_DATA }}">
+
+            {% if DJ_CASAMENTO_JA_ACONTECEU %}
+              <p style="font-size: 1.8em;">Estamos Casados há</p>
+              <input type="hidden" id="id_ja_aconteceu" value="{{ DJ_CASAMENTO_JA_ACONTECEU }}">
+              <input type="hidden" id="id_casados_por" value="{{ DJ_CASAMENTO_CASADOS_POR }}">
+            {% else %}
+              <p style="font-size: 1.8em;">F A L T A M</p>
+            {% endif %}
+
+            <div class="row">
+              <div id="countdown"></div>
+            </div>
+
+          </div>
+          <div class="arrow-down">
+            <a class="scroll" href="#about" id="scroll"><i class="fa fa-angle-double-down"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <h3 class="section-title">Oi querida família e amigos,</h3>
+            <div class="section-title-border"></div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <h3>
+              Estamos muito felizes por compartilhar este dia especial com vocês. Criamos este site para interagir com cada um e poder passar mais informações.
+            </h3>
+            <div class="row">
+              <div class="col-sm-4 feature-box-container">
+                <div class="feature-box wow fadeInDown" data-wow-delay="0.4s">
+                  <div class="icon">
+                    <i class="fa fa-heart"></i>
+                  </div>
+                  <div class="description">
+                    <h4>{{ DJ_CASAMENTO_DATE|date:"D d M Y" }} </h4>
+                    <!--<p>
+                      <a class="btn btn-warning btn-lg" href="{% url 'core.avisoconfirmacao' %}">CONFIRMAR PRESENÇA</a>
+                    </p>-->
+                    <p>
+                    <a class="btn btn-warning" href="{% url 'listapresentes.home' %}">Lista de presentes</a>
+                    </p>
+                    <p>
+                    <a class="btn btn-warning" href="{% url 'core.apps' %}">Aplicativos de casamento</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 feature-box-container">
+                <div class="feature-box wow fadeInDown">
+                  <div class="icon">
+                    <i class="fa fa-heart"></i>
+                  </div>
+                  <div class="description">
+                    <h4>{{ DJ_CASAMENTO_LOCAL }}</h4>
+                    <p>
+                      <a class="btn btn-warning" href="{% url 'core.cerimoniareligiosa' %}">Cerimônia Religiosa</a>
+                    </p>
+                    <p>
+                      <a class="btn btn-warning" href="{% url 'core.restaurante' %}">Restaurante (Recepção)</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 feature-box-container">
+                <div class="feature-box wow fadeInDown" data-wow-delay="0.2s">
+                  <div class="icon">
+                    <i class="fa fa-heart"></i> 
+                  </div>
+                  <div class="description">
+                    <h4>{{ DJ_CASAMENTO_CIDADE }}</h4>
+                    <p>
+                      <a class="btn btn-warning" href="{% url 'core.dicasdehoteis' %}">Dicas de hoteis</a>
+                    </p>
+                    <p>
+                      <a class="btn btn-warning" href="{% url 'core.salaodebeleza' %}">Dicas salão de beleza</a>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="container-fluid container-article">
+
+      <div class="row articles">
+
+      {% for foto in fotos %}
+        <div class="col-xs-4 article-img">
+          <a href="#">
+            <img src="{{ foto.imagem.url }}" alt="{{ foto.titulo }}">
+          </a>
+          <div class="article-overlay"></div>
+        </div>
+      {% endfor %}
+
+      </div>
+
+    </div>
+
+{% endblock %}
+
+
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('#status').fadeOut();
+        $('#preloader').delay(300).fadeOut('slow');
+        $('body').delay(300).css({
+          'overflow': 'visible'
+        });
+        $('body').css({
+          'overflow-x': 'hidden'
+        });
+
+      });
+
+      $(function () {
+        "use strict";
+
+        /* ---------------------------------------------------------
+         * Background (Backstretch)
+         */
+
+        $.backstretch([
+          "{% static 'themes/default/img/background_home_3240x1900_default.jpg' %}?width=3240"
+        ]);
+
+        new WOW({
+          mobile: true
+        }).init();
+        if(Modernizr.cssanimations) {
+             new WOW().init();
+        }
+
+        /* ---------------------------------------------------------
+         * Scroll arrow
+         */
+        $("#scroll").click(function () {
+          if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+              $('html,body').animate({
+                scrollTop: target.offset().top
+              }, 1200);
+              return false;
+            }
+          }
+         });
+
+        /* ---------------------------------------------------------
+         * Countdown
+         */
+
+        var ja_aconteceu = $("#id_ja_aconteceu");
+        var data_casamento = $("#id_data_casamento").val();
+
+        var description = {
+          weeks: "Semanas",
+          days: "Dias",
+          hours: "Horas",
+          minutes: "Minutos",
+          seconds: "Segundos"
+        };
+        if (ja_aconteceu.length) {
+
+        }
+
+        // year/month/day
+        $('#countdown').countdown( data_casamento , function (event) {
+
+          if (ja_aconteceu.length) {
+            description = {
+              weeks: " ",
+              days: " ",
+              hours: "YEARs",
+              minutes: " ",
+              seconds: " "
+            };
+            var casados_por = $('#id_casados_por').val();
+
+            $(this).html(event.strftime(
+              '<div class="countdown-section"><b>00</b> <span>...</span> </div>' +
+              '<div class="countdown-section"><b>00</b> <span>...</span> </div>' +
+              '<div class="countdown-section"><b>+' + casados_por + '</b> <span style="font-size: 0.6em;">Anos</span> </div>'
+            ));
+
+          } else {
+            $(this).html(event.strftime(
+              '<div class="countdown-section"><b>%w</b> <span>' + description.weeks + '</span> </div>' +
+              '<div class="countdown-section"><b>%d</b> <span>' + description.days + '</span> </div>' +
+              '<div class="countdown-section"><b>%H</b> <span>' + description.hours + '</span> </div>' +
+              '<div class="countdown-section"><b>%M</b> <span>' + description.minutes + '</span> </div>' +
+              '<div class="countdown-section"><b>%S</b> <span>' + description.seconds + '</span> </div>'
+            ));
+
+          }
+
+        });
+
+      });
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

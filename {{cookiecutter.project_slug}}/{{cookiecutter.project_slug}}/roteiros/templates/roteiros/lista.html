@@ -1,0 +1,481 @@
+{% raw %}
+{% extends 'themes/default/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="section-title">Roteiros</h3>
+          <div class="section-title-border"></div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+
+          <ul id="myTab" class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#noiva" id="noiva-tab" role="tab" data-toggle="tab" aria-controls="noiva" aria-expanded="true"><i class="fa fa-female"></i> Noiva</a>
+            </li>
+            <li role="presentation" class=""><a href="#noivo" role="tab" id="noivo-tab" data-toggle="tab" aria-controls="noivo" aria-expanded="false"><i class="fa fa-child"></i> Noivo</a>
+            </li>
+            <li role="presentation" class=""><a href="#transporte" role="tab" id="transporte-tab" data-toggle="tab" aria-controls="transporte" aria-expanded="false"><i class="fa fa-taxi"></i> Carro da noiva</a>
+            </li>
+            <li role="presentation" class=""><a href="#padrinhos" role="tab" id="padrinhos-tab" data-toggle="tab" aria-controls="padrinhos" aria-expanded="false"><i class="fa fa-group"></i> Padrinhos</a>
+            </li>
+            <li role="presentation" class=""><a href="#igreja" role="tab" id="igreja-tab" data-toggle="tab" aria-controls="igreja" aria-expanded="false"><i class="fa fa-university"></i> Igreja</a>
+            </li>
+            <li role="presentation" class=""><a href="#restaurante" role="tab" id="restaurante-tab" data-toggle="tab" aria-controls="restaurante" aria-expanded="false"><i class="fa fa-cutlery"></i> Restaurante</a>
+            </li>
+            <li role="presentation" class=""><a href="#fotografos" role="tab" id="fotografos-tab" data-toggle="tab" aria-controls="fotografos" aria-expanded="false"><i class="fa fa-camera"></i> Fotógrafos</a>
+            </li>
+          </ul>
+
+          <div id="myTabContent" class="tab-content">
+
+            <div role="tabpanel" class="tab-pane fade active in" id="noiva" aria-labelledby="noiva-tab">
+
+              <h1>Roteiro da Noiva</h1>
+              <table class="table table-condensed table-hover">
+                <tbody>
+                  <tr>
+                    <td><strong>08h30</strong></td>
+                    <td>Café da manhã bem saudável</td>
+                  </tr>
+                  <tr>
+                    <td><strong>10h00</strong></td>
+                    <td>Separar vestido, sapato e acessórios da noiva</td>
+                  </tr>
+                  <tr>
+                    <td><strong>10h20</strong></td>
+                    <td>Banho</td>
+                  </tr>
+                  <tr>
+                    <td><strong>11h30</strong></td>
+                    <td>Início do dia da noiva no Life Beauty Center</td>
+                  </tr>
+                  <tr>
+                    <td><strong>16h15</strong></td>
+                    <td>Término do dia da noiva</td>
+                  </tr>
+                  <tr>
+                    <td><strong>16h25</strong></td>
+                    <td>Saída em direção a Capela</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade in" id="noivo" aria-labelledby="noivo-tab">
+
+              <h1>Roteiro do noivo</h1>
+              <table class="table table-condensed table-hover">
+                <tbody>
+                  <tr>
+                    <td><strong>08h30</strong></td>
+                    <td>Café da manhã bem saudável</td>
+                  </tr>
+                  <tr>
+                    <td><strong>12h00</strong></td>
+                    <td>Almoço reforçado</td>
+                  </tr>
+                  <tr>
+                    <td><strong>16h30</strong></td>
+                    <td>Chegar na Igreja</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+            <div role="tabpanel" class="tab-pane fade in" id="transporte" aria-labelledby="transporte-tab">
+
+              <h1>Roteiro do carro da noiva</h1>
+              <table class="table table-condensed table-hover">
+                <tbody>
+                  <tr>
+                    <td><strong>08h00</strong></td>
+                    <td>Saída de Itapecerica para São José dos Campos (140km, entre 2 a 2h30)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>11h00</strong></td>
+                    <td>Chegada na rua Benedito Alvarenga Carvalho, 91 (Garagem)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>11h15</strong></td>
+                    <td>Simulação do percurso</td>
+                  </tr>
+                  <tr>
+                    <td><strong>12h00</strong></td>
+                    <td>Almoço</td>
+                  </tr>
+                  <tr>
+                    <td><strong>16h10</strong></td>
+                    <td>Esperar a noiva sair do Life Beauty Center<br/>
+                      <small>Rua das Carpas, 60 - Parque Res. Aquarius</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>16h25</strong></td>
+                    <td>Saída em direção a Capela<br/>
+                      <small>Praça Nossa senhora de Fátima, 2 - Jd. Esplanada</small><br/>
+                      <strong>(7km - de 10 a 15min) </strong> em condições normais
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>16h45</strong></td>
+                    <td>Chegada da noiva na praça nossa sra de fátima</td>
+                  </tr>
+                  <tr class="danger">
+                    <td><strong>18h00</strong></td>
+                    <td>Pausa<br/>
+                    <small>Rua Antonio Rodrigues Arzão, 77 <br/>
+                    (rua sem saída na latera da Capela)<br/>
+                    Voltar na praça para algumas fotos
+                    </small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>18h30</strong></td>
+                    <td>Partida em sentido ao restaurante<br/>
+                    <small>Av. Anchieta, 207 - Jardim Esplanada</small><br/>
+                    (1.5km - 5min)
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>18h40</strong></td>
+                    <td>Estacionamento<br/>
+                    <small>Na frente do estacionamento tem o estacionamento do Guten Bier: Av. Manoel Borba Gato, 158</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>-</strong></td>
+                    <td>Fim das atividades</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade in" id="padrinhos" aria-labelledby="padrinhos-tab">
+
+              <h1>Roteiro dos padrinhos</h1>
+              <table class="table table-condensed table-hover">
+                <tbody>
+                  <tr>
+                    <td><strong>08h30</strong></td>
+                    <td>Café da manhã bem saudável</td>
+                  </tr>
+                  <tr>
+                    <td><strong>12h00</strong></td>
+                    <td>Almoço leve</td>
+                  </tr>
+                  <tr>
+                    <td><strong>16h30</strong></td>
+                    <td><strong>IMPORTANTE:</strong> Chegar na Igreja para o ensaio da entrada com Fernanda Galvão</td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+
+            <div role="tabpanel" class="tab-pane fade in" id="igreja" aria-labelledby="igreja-tab">
+
+              <h1>Roteiro da Igreja</h1>
+              <table class="table table-condensed table-hover">
+                <tbody>
+                  <tr>
+                    <td><strong>16h30</strong></td>
+                    <td>Ensaio das entradas</td>
+                  </tr>
+                  <tr>
+                    <td><strong>17h00</strong></td>
+                    <td>Entrada do noivo <small><i class="fa fa-music"></i> Times Like These - Foo Fighters</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>17h00</strong></td>
+                    <td>Entrada dos padrinhos <small><i class="fa fa-music"></i> Time of Your Life - Greenday</small><br/>
+                        <small>[noiva] Maria Letícia & Alexandre</small><br/>
+                        <small>[noivo] Karoline & Fabien</small><br/>
+                        <small>[noiva] Marilú & Irineu </small><br/>
+                        <small>[noivo] Rafael & Noémie </small><br/>
+                        <small>[noiva] Letícia & Fernando</small><br/>
+                        <small>[noivo] Thais & Heslei </small><br/>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>17h05</strong></td>
+                    <td>Entrada da noiva <small><i class="fa fa-music"></i> Marcha Nupcial de Mendelssohn</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>17h10</strong></td>
+                    <td>Entrada das alianças <small><i class="fa fa-music"></i> Somewhere over the Rainbow - IZ</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>17h10</strong></td>
+                    <td>Troca das alianças <small><i class="fa fa-music"></i> Close To You - Carpenters</small>
+                    </td>
+                  </tr>
+                  <tr class="danger">
+                    <td><strong>17h15</strong></td>
+                    <td>Aclamação <small><i class="fa fa-music"></i> Definir</small>
+                    </td>
+                  </tr>
+                  <tr class="danger">
+                    <td><strong>17h30</strong></td>
+                    <td>Comunhão <small><i class="fa fa-music"></i> Definir</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>17h50</strong></td>
+                    <td>Agradecimentos & Saída dos padrinhos <small><i class="fa fa-music"></i> You are My Best Friend - Queen</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>17h55</strong></td>
+                    <td>Saída dos noivos <small><i class="fa fa-music"></i> Don't Stop Believing - Journey</small>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade in" id="restaurante" aria-labelledby="restaurante-tab">
+
+              <h1>Roteiro do restaurante</h1>
+              <table class="table table-condensed table-hover">
+                <tbody>
+                  <tr>
+                    <td><strong>18h00</strong></td>
+                    <td>Início da Recepção</td>
+                  </tr>
+                  <tr>
+                    <td><strong>18h10</strong></td>
+                    <td>Bebidas e Petiscos</td>
+                  </tr>
+                  <tr>
+                    <td><strong>18h40</strong></td>
+                    <td>Entrada do casal <small><i class="fa fa-music"></i> The Winner Is - Little Miss Sunshine Soundtrack</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>19h15</strong></td>
+                    <td>Início do prato principal</td>
+                  </tr>
+                  <tr>
+                    <td><strong>19h15</strong></td>
+                    <td>Foto do "corte" do bolo</td>
+                  </tr>
+                  <tr>
+                    <td><strong>21h00</strong></td>
+                    <td>Valsa <small><i class="fa fa-music"></i> Can't take my eyes off you - Frank Sinatra</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><strong>21h10</strong></td>
+                    <td>Servir o bolo e sobremesas</td>
+                  </tr>
+                  <tr>
+                    <td><strong>22h15</strong></td>
+                    <td>Servir mesa pra o café</td>
+                  </tr>
+                  <tr>
+                    <td><strong>23h00</strong></td>
+                    <td>The end</td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade in" id="fotografos" aria-labelledby="fotografos-tab">
+
+              <h1>Roteiro dos fotografos</h1>
+              <div class="row">
+                <div class="col-sm-6">
+                  <h3><strong>Jesus Suppertramp</strong></h3>
+                  <table class="table table-condensed table-hover">
+                    <tbody>
+                      <tr>
+                        <td><strong>08h00</strong></td>
+                        <td>Seguir viagem para São José dos Campos</td>
+                      </tr>
+                      <tr>
+                        <td><strong>12h00</strong></td>
+                        <td>Almoço Reforçado</td>
+                      </tr>
+                      <tr>
+                        <td><strong>14h00</strong></td>
+                        <td>Fazer check in no Comfort Hotel (Reserva Nº 46960023)<br/>
+                        <small>Rua Presidente Bernardes, 73 (600m da Rodoviaria)<br/>
+                        (se ligar no dia 4jul no 3947-7666 pode ver disponibilidade de fazer check in antes das 14h)
+                        </small>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>14h30</strong></td>
+                        <td>Partir para o Salão (Life Beauty Center)<br/>
+                        <small>Rua das Carpas, 60 - Parque Res. Aquarius (7.4km 15min espera de taxi + 15min da corrida)
+                        </small>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>15h00</strong></td>
+                        <td>Chegada no Life Beauty Center</td>
+                      </tr>
+                      <tr>
+                        <td><strong>16h25</strong></td>
+                        <td>Saída em direção a Capela<br/>
+                          <small>Praça Nossa senhora de Fátima, 2 - Jd. Esplanada</small><br/>
+                          (7km - de 10 a 15min)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>17h00</strong></td>
+                        <td>Fotos da Capela</td>
+                      </tr>
+                      <tr class="danger">
+                        <td><strong>18h00</strong></td>
+                        <td>Acompanhar a Pausa do casal<br/>
+                        <small>Rua Antonio Rodrigues Arzão, 77 <br/>
+                        (rua sem saída na lateral da Capela - 100m caminhando)</small>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>18h30</strong></td>
+                        <td>Partida em sentido ao restaurante<br/>
+                        <small>Av. Anchieta, 207 - Jardim Esplanada</small><br/>
+                        (300m caminhando) - VER MAPA
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>18h40</strong></td>
+                        <td>Foto da entrada do casal</td>
+                      </tr>
+                      <tr>
+                        <td><strong>19h15</strong></td>
+                        <td>Foto do "corte" do bolo</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <div class="col-sm-6">
+                  <h3><strong>Allis Bezerra</strong></h3>
+                  <table class="table table-condensed table-hover">
+                    <tbody>
+                      <tr>
+                        <td><strong>08h00</strong></td>
+                        <td>Seguir viagem para São José dos Campos</td>
+                      </tr>
+                      <tr>
+                        <td><strong>12h00</strong></td>
+                        <td>Almoço Reforçado</td>
+                      </tr>
+                      <tr>
+                        <td><strong>14h00</strong></td>
+                        <td>Fazer check in no Comfort Hotel (Reserva Nº 46960023)<br/>
+                        <small>Rua Presidente Bernardes, 73 (600m da Rodoviaria)<br/>
+                        (se ligar no dia 4jul no 3947-7666 pode ver disponibilidade de fazer check in antes das 14h)
+                        </small>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>14h30</strong></td>
+                        <td>Partir para o Salão (Life Beauty Center)<br/>
+                        <small>É ao lado da casa do noivo</small><br/>&nbsp
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>15h00</strong></td>
+                        <td>Chegada ao Salão, partir para casa do noivo</td>
+                      </tr>
+                      <tr>
+                        <td><strong>16h00</strong></td>
+                        <td>Saída em direção a Capela <br/>&nbsp<br/>&nbsp</td>
+                      </tr>
+                      <tr>
+                        <td><strong>17h00</strong></td>
+                        <td>Fotos da Capela</td>
+                      </tr>
+                      <tr>
+                        <td><strong>18h00</strong></td>
+                        <td>Partida em sentido ao restaurante<br/>
+                        <small>Av. Anchieta, 207 - Jardim Esplanada</small><br/>
+                        (300m caminhando) - VER MAPA
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><strong>18h10</strong></td>
+                        <td>Foto da decoração, tags<br/>&nbsp<br/>&nbsp</td>
+                      </tr>
+                      <tr>
+                        <td><strong>18h40</strong></td>
+                        <td>Foto da entrada do casal</td>
+                      </tr>
+                      <tr>
+                        <td><strong>19h15</strong></td>
+                        <td>Foto do "corte" do bolo</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <center>
+            <p><br/></p>
+            <p>
+              <a class="btn btn-default btn-lg" href="{% url 'core.showhome' %}">Ir para página principal</a>
+              <a class="btn btn-warning btn-lg" href="{% url 'fornecedores.lista' %}">Fornecedores</a>
+            </p>
+          </center>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+      });
+
+      $(document).ready(function(){
+
+        $('#myTab a').click(function (e) {
+          e.preventDefault();
+          $(this).tab('show');
+        });
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

@@ -1,0 +1,8 @@
+*.pyc
+components
+assets/
+
+*.sqlite3
+media/
+
+.vscode/

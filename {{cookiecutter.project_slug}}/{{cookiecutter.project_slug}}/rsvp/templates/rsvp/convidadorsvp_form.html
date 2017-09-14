@@ -1,0 +1,147 @@
+{% raw %}
+{% extends 'rsvp/base_rsvp.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+  <!-- Main -->
+  <section class="main text-center" id="home" style="height: 26px;">
+    <div class="page">
+      <div class="wrapper">
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-12">
+
+          <form method='post' enctype="multipart/form-data">{% csrf_token %}
+
+            {% if object.eh_primeiro_acesso %}
+              <input type="hidden" name="primeiro_acesso" id="id_primeiro_acesso">
+            {% endif %}
+
+            <div class="row">
+              <div class="col-xs-8">
+                <p><small>4 Julho 2015 às 16:45 em São José dos Campos</small></p>
+              </div>
+              <div class="col-xs-4">
+                <div class="pull-right">
+                  <button type="submit" class="btn btn-warning btn-lg">
+                    {% if object.eh_primeiro_acesso %}
+                      <i class="fa fa-arrow-right"></i> Continuar
+                    {% else %}
+                      <i class="fa fa-thumbs-o-up"></i> OK
+                    {% endif %}
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-8">{% formrow form.nome_completo %}</div>
+              <div class="col-xs-4">{% formrow form.rsvp %}</div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-5">{% formrow form.fone %}</div>
+              <div class="col-xs-7">{% formrow form.email %}</div>
+            </div>
+          </form>
+
+          {% if not object.eh_primeiro_acesso %}
+          <div id="acompanhantes">
+            <h4>Acompanhante(s)</h4>
+            <table class="table table-striped">
+              <tbody>
+              {% for acompanhante in object.acompanhantes.all %}
+                <tr>
+                  <td>1</td>
+                  <td>{{ acompanhante.tipo_verbose }}</td>
+                  <td>{{ acompanhante.nome }}</td>
+                  <td>
+                    <small>
+                      <form method="POST" action="{% url 'rsvp.confirmacao.convidado.delete' acompanhante.id object.id %}">{% csrf_token %}
+                        <button type="submit" class="btn btn-default">
+                          <i class="fa fa-trash"></i> Remover
+                        </button>
+                      </form>
+                    </small>
+                  </td>
+                </tr>
+              {% endfor %}
+
+              <form method='post' action="{% url 'rsvp.confirmacao.convidado.create' object.id %}" enctype="multipart/form-data">{% csrf_token %}
+                <tr>
+                  <td>1</td>
+                  <td>{% formrow acompanhante_form.tipo %}</td>
+                  <td>{% formrow acompanhante_form.nome %}</td>
+                  <td><br/> 
+                    <button type="submit" class="btn btn-lg btn-success">
+                      <i class="fa fa-plus"></i> Adicionar
+                    </button>
+                  </td>
+                </tr>
+              </form>
+
+              </tbody>
+            </table>
+          </div>
+          <center>
+          <p><strong>IMPORTANTE:</strong> Haverá uma lista de entrada no restaurante, portanto recomendamos a verificação do nome do convidado e do(s) acompanhante(s).</p>            
+          </center>
+          {% endif %}
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+
+        if ( $( "#id_primeiro_acesso" ).length ) {
+          $( "#id_nome_completo" ).focus();
+        } else {
+          $( "#id_nome_completo" ).attr("readonly", true);
+          $( "#id_fone" ).attr("readonly", true);
+          $( "#id_rsvp" ).focus();
+        }
+
+        $("#id_rsvp").on('change', function() {
+          var rsvp = $(this).val();
+          if (rsvp == 'sim') {
+            $( "#acompanhantes" ).show();
+            $( "#id_rsvp" ).css("background-color", "#5CB85C");
+          } else {
+            $( "#acompanhantes" ).hide();
+            $( "#id_rsvp" ).css("background-color", "#F24D4D");
+          }
+        });
+
+        $("#id_rsvp").change();
+
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

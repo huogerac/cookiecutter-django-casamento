@@ -1,0 +1,24 @@
+{
+    "project_name": "Project Name",
+    "project_slug": "{{ cookiecutter.project_name.lower()|replace(' ', '_')|replace('-', '_') }}",
+    "casamento_de": "Maria",
+    "com": "Jose",
+    "data_hora": "2018-7-4 16:00",
+    "local": "Capela Nossa Sra de Fátima",
+    "cidade": "São José dos Campos",
+    "email_contato": "casamento@meudominio.com",
+    "fone_contato": "12 991 991 000",
+    "dominio": "meucasamento.com.br",
+    "author_name": "Roger Camargo",
+    "email": "you@example.com",
+    "version": "0.1.0",
+    "_copy_without_render": [
+        "*.css",
+        "*.svg",
+        "*.gif",
+        "*.png",
+        "*.jpg",
+        "LICENSE.txt",
+        "*.js"
+    ]
+}

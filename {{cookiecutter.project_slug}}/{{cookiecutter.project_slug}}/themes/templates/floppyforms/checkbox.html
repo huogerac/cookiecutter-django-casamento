@@ -1,0 +1,9 @@
+{% raw %}
+<div class="form-group">
+	<div class="checkbox">
+	    <label>
+	      <input type="{{ type }}" name="{{ name }}" {% if value %} value="{{ value }}"{% endif %} {% if required %} required{% endif %}{% include "floppyforms/attrs.html" %}>{{ label }}
+	    </label>
+	</div>
+</div>
+{% endraw %}

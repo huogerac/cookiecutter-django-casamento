@@ -1,0 +1,140 @@
+{% raw %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ DJ_CASAMENTO_DE_UM_LADO }} & {{ DJ_CASAMENTO_DO_OUTRO }} | Site Oficial</title>
+
+        <!-- Basic CSS files -->
+        {% block css %}
+
+		    <link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+        <link href="{% static 'font-awesome-bower/css/font-awesome.css' %}" rel="stylesheet">
+        <link href="{% static 'themes/default/css/ladda-themeless.min.css' %}" rel="stylesheet">
+        <link href="{% static 'animate.css/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'themes/default/css/owl.carousel.css' %}" rel="stylesheet">
+        <link href="{% static 'themes/default/css/owl.theme.css' %}" rel="stylesheet">
+        <link href="{% static 'themes/default/css/app_v2.css' %}" rel="stylesheet">
+
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="{% static 'themes/default/img/favicon/favicon.ico' %}" type="image/x-icon">
+		<link rel="icon" href="{% static 'themes/default/img/favicon/favicon.ico' %}" type="image/x-icon">
+
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+		{% endblock css %}
+
+		<!--  USE THE extracss BLOCK to add CSS here -->
+		{% block extracss %}
+		{% endblock extracss %}
+
+        <!-- Basic CSS files -->
+        {% block js_top %}
+		<script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+		{% endblock js_top %}
+
+		<!--  USE THE extrajs_top BLOCK to add javascripts here -->
+		{% block extrajs_top %}
+		{% endblock extrajs_top %}
+
+
+    </head>
+
+    <!--  USE THE body BLOCK to override all the body -->
+    {% block body %}
+	<body>
+
+	    <!--  USE THE extrabody_top BLOCK to add content here -->
+        {% block extrabody_top %}
+        {% endblock extrabody_top %}
+
+        <!--  USE THE topheader_area BLOCK to add content here -->
+        {% block topheader_area %}
+        {% endblock topheader_area %}
+
+
+
+			<!--  USE THE navbar_area BLOCK to add content here -->
+			{% block navbar_area %}
+			{% endblock navbar_area %}
+
+			<!--  USE THE header_area BLOCK to add content here -->
+			{% block header_area %}
+					{% block header %}
+					{% endblock header %}
+			{% endblock header_area %}
+
+			<!--  USE THE content_area BLOCK to add the MAIN CONTENT -->
+			{% block content_area %}
+
+				<!--  USE THE slide_area BLOCK to add content here -->
+				{% block slider_area %}
+				{% endblock slider_area %}
+
+				<!--  OR USE THE content BLOCK DIRECTLY -->
+				{% block content %}
+
+				{% endblock content %}
+
+			{% endblock content_area %}
+
+			<!--  USE THE extra_content_area BLOCK to add content here -->
+			{% block extra_content_area %}
+			{% endblock extra_content_area %}
+
+			<!--  USE THE footer_area BLOCK to add content here -->
+			{% block footer_area %}
+        <!-- footer_area -->
+        <section id="contact" class="section">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <h3 class="section-title">{{ DJ_CASAMENTO_DE_UM_LADO }} & {{ DJ_CASAMENTO_DO_OUTRO }}</h3>
+                <div class="section-title-border"></div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6">
+              </div>
+              <div class="col-sm-6">
+              </div>
+            </div>
+          </div>
+        </section>
+		    {% endblock footer_area %}
+
+
+        <!--  USE THE extrabody_bottom BLOCK to add content here -->
+        {% block extrabody_bottom %}
+        {% endblock extrabody_bottom %}
+
+        {% block js %}
+    <script src="{% static 'modernizr/modernizr.js' %}"></script>
+		<script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+		<script src="{% static 'themes/default/js/jquery.backstretch.min.js' %}"></script>
+		<script src="{% static 'themes/default/js/jquery.countdown.min.js' %}"></script>
+		<script src="{% static 'themes/default/js/spin.min.js' %}"></script>
+		<script src="{% static 'themes/default/js/ladda.min.js' %}"></script>
+		<script src="{% static 'themes/default/js/retina.min.js' %}"></script>
+		<script src="{% static 'themes/default/js/wow.min.js' %}"></script>
+		<script src="{% static 'themes/default/js/owl.carousel.min.js' %}"></script>
+
+        {% endblock js %}
+
+        <!--  USE THE extrajs_bottom BLOCK to add extra javascripts here -->
+        {% block extrajs_bottom %}
+        {% endblock extrajs_bottom %}
+
+	</body>
+	{% endblock body %}
+
+</html>
+{% endraw %}

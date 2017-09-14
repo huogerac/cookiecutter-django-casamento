@@ -1,0 +1,72 @@
+{% raw %}
+{% extends 'core/base_core.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block content %}
+
+  <section id="about" class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <h3 class="section-title">Restaurante</h3>
+          <div class="section-title-border"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <h2><strong>Azenda - Batataria</strong></h2>
+          <h3>Av. Anchieta, 207 - Jd. Esplanada</h3>
+          <h3>São José dos Campos/SP</h3>
+          <p>O restaurante onde faremos a recepção esta a 350 metros da Capela</p>
+          <h4><strong><a target="_blank" href="https://www.google.com.br/maps/place/Azenda+Batataria+%26+Bar/@-23.1927366,-45.8957401,17z/data=!3m1!4b1!4m2!3m1!1s0x94cc4a0dbd0c2eff:0x7aa1ecad5a402ce6?hl=pt"><i class="fa fa-map-marker"></i> Ver mapa</a></strong>
+          </h4>
+          <p><br/></p>
+          <h3>Dicas para quem vem de carro</h3>
+          <h2>- Vindo pela Dutra de São Paulo, utilize a saída do km 152 para ficar na marginal local (paralela a dutra) <small>(Se não entrar na 152 ou 151, não terá mais acesso para São José dos Campos, será necessário atravessar a cidade para encontrar retorno...)</small></h2>
+          <h2>- A capela é bem próxima do restaurante</h2>
+          <h2>- Existe um estacionamento na frente do restaurante por R$3 a hora (ver mapa)</h2>
+          <p></p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-8">
+          <p>
+            <img width="100%" src="{% static 'themes/default/img/imagem-restaurante.png' %}">
+          </p>
+        </div>
+        <div class="col-xs-2"></div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12">
+          <center>
+            <p><br/></p>
+            <p>
+              <a class="btn btn-default btn-lg" href="{% url 'core.showhome' %}">Ir para página principal</a>  
+              <a class="btn btn-warning btn-lg" href="{% url 'core.cerimoniareligiosa' %}">Capela</a>
+            </p>
+          </center>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}

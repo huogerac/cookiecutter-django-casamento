@@ -1,0 +1,65 @@
+{% raw %}
+{% extends 'core/base_core.html' %}
+
+{% load floppyforms %}
+{% load static %}
+
+{% block content %}
+
+  <section id="about" class="section">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-md-4"></div>
+
+        <div class="col-md-4">
+
+          <div class="light-box spaced-box">
+
+            <div class="text-center">
+                <img width="380" src="{% static 'themes/default/img/background_home_3240x1900_default.jpg' %}">
+            </div>
+
+            <form method="post" action="{% url 'url_login_auth' %}">{% csrf_token %}
+
+                {{ form }}
+
+                <p>
+                    <button type="submit" class="btn btn-primary btn-lg">
+                      Login  <i class="fa fa-sign-in"></i> 
+                    </button>
+                </p>
+                <input type="hidden" name="next" value="{{ next }}" />
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+{% endblock %}
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+      $(window).load(function () {
+        "use strict";
+        $('body').delay(350).css({
+          'overflow': 'visible'
+        });
+      });
+
+      $(document).ready(function(){
+        $('#id_username').focus();
+      });
+
+    </script>
+{% endblock extrajs_bottom %}
+{% endraw %}
