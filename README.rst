@@ -39,6 +39,7 @@ Requirements
 Instalar o cookiecutter::
 
     $ pip install "cookiecutter>=1.4.0"
+    # Python 2.7 (Falta migrar para Python 3)
 
 
 Get Started
