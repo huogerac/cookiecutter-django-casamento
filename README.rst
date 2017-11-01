@@ -137,10 +137,16 @@ Community
         :align: center
 
 
+Sites parecidos
+---------------
+https://github.com/czue/django-wedding-website
+
+
 Not Exactly What You Want?
 ---------------------------
 
 Check the Cookiecutter-django_ repo
+
 
 
 Credits
